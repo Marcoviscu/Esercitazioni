@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  height: 50vh;
+  background-color: aquamarine;
+}
