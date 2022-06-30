@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Charis+SIL&family=Contrail+One&family=Press+Start+2P&family=Roboto:wght@300&display=swap");
+
+::-webkit-scrollbar {
+  background-color: hsl(235, 24%, 19%);
+  width: 8px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsla(235, 21%, 11%, 0.322);
+  box-shadow: 0 0 3px hsl(235, 21%, 11%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(235, 21%, 11%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(220, 98%, 61%);
+}
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Contrail One";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav {
+  background-color: #0b5f08;
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.main-nav input {
+  border-radius: 5px;
+}
+
+.main-nav img {
+  max-width: 100px;
+}
+
+.friends {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  padding: 20px 0px;
+  overflow-y: scroll;
+  height: 50vh;
+  padding: 10px 10px;
+}
+
+.friends img {
+  width: 35px;
+  padding: 10px;
+  background: white;
+  border-radius: 100%;
+}
+
+.friendCard {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  background: rgb(212, 212, 212);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+}
+
+.messages input {
+  border-radius: 5px;
+}
+
+.add-new-message {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0px;
+  padding: 20px;
+  background-color: #0b5f08;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.add-new-message-btn {
+  border-radius: 3px;
+  padding: 5px 0px;
+  background-color: #ffffff;
+}
+
+.filter-input {
+  margin: 0 20px;
+}
+
+.messageCard {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(212, 212, 212);
+  border: 2px;
+  padding: 0 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.messages-list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.empty {
+  overflow: hidden;
+  width: 100%;
+  background: rgb(255, 255, 255);
+}
+
+@media only screen and (min-width: 767px) {
+  .main-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-body {
+    display: flex;
+    flex-direction: row;
+  }
+  .friends {
+    width: 25%;
+    height: 90vh;
+  }
+
+  .friendCard {
+    transition: 0.35s;
+    width: 90%;
+  }
+
+  .friendCard:hover {
+    transform: (1.2);
+  }
+
+  .add-new-message {
+    border-radius: 3px;
+  }
+
+  .messages {
+    width: 33%;
+    flex-grow: 1;
+  }
+
+  .messageCard {
+    transition: 0.35s;
+  }
+
+  .messageCard:hover {
+    transform: (1.2);
+  }
+
+  .empty {
+    width: 25%;
+  }
+}
