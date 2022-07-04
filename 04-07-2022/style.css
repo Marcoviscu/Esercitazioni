@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.inner-bodt {
+  justify-content: space-between;
+}
