@@ -1,0 +1,30 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 10px;
+}
+
+li {
+  border: 2px red solid;
+  list-style-type: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.first-button,
+.second-button,
+.third-button {
+  border-radius: 100%;
+  background-color: darkgreen;
+}
