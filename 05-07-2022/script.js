@@ -26,27 +26,10 @@ const total = prova.forEach((e) => {
 const total2 = fullOptionalPrice + product.price;
 console.log(total2);
 
-//  // usiamo Object.values per sommare ed ottenere -> 110
-
-// // ## Get/Set
-
-// // 1. Implementare una grafica _**semplice**_ prendendo come spunto [questo shop](
-// //    // https://xd.adobe.com/spec/3409f0fd-25f1-4668-428f-d25447f00e7b-4238/screen/d3fb646d-a698-4eea-bb8e-91be0b0ae011/
-// //    ). La pagina deve comprendere:
-// //     1. Lista di prodotti che vengono mostrati. (Possiamo gestire quelli nascosti sia non stampandoli che aggiungendo una
-// //        classe per applicare un display:none);
-// //     2. Paginazione con 3 bottoni per le pagine: (1,2,3).
-// //     3. **_La parte con i filtri possiamo non implementarla al momento_**
-
-// // 2. Partendo dal codice in calce:
-// //     1. Scrivere il codice che permette al click su un bottone della paginazione di cambiare shop.page;
-// //     2. Implementare il `setter` per la prop `shop.page`;
-// //     3. Implementare `renderHTML` in modo da usarla quando necessario aggiornare il contenuto della pagina;
-// //     4. Gestire la paginazione, si consiglia di farlo dentro il `getter` di `shop.products`.
-
 const getProductHTML = (product) => {
-  const { name, price } = product;
-  return `<li>${name} - ${price}€</li>`;
+  const { name, price, img } = product;
+
+  return `<li><img src="${img}"><p class="title_product">${name}</p><p class="price_product">${price}</p><button class="buy">Compra</button></li>`;
 };
 
 const shop = {
@@ -55,7 +38,7 @@ const shop = {
   _page: 1, // pagina corrente
   _per_page: 6, // numero di risultati per pagina
 
-  get getProducts() {
+  get products() {
     /**
      * Qui dentro dovremmo riuscire a paginare i prodotti.
      * Possiamo procurarci un indice iniziale ed uno finale lavorando con this._page e this._per_page
@@ -63,10 +46,11 @@ const shop = {
 
     const indexOfLastPost = this._page * this._per_page;
     const indexOfFirstPost = indexOfLastPost - this._per_page;
+    // console.log(indexOfFirstPost, indexOfLastPost);
 
-    console.log("Stai leggendo i prodotti di ", this.name);
-    const startIndex = 0; // ...
-    const endIndex = this._products.length / this._per_page; // ...
+    // console.log("Stai leggendo i prodotti di ", this.name);
+    // const startIndex = 0; // ...
+    // const endIndex = this._products.length / this._per_page; // ...
     const paginatedProducts = this._products.slice(
       indexOfFirstPost,
       indexOfLastPost
@@ -75,43 +59,46 @@ const shop = {
     return paginatedProducts;
   },
 
-  set paperino(newProducts) {
-    /**
-     * Il consiglio è quello di spostare la parte di renderHTML dentro una funzione indipendente,
-     * così da rendere il metodo più snello
-     * **/
-
+  set products(newProducts) {
     this._products = newProducts;
-
-    const productsHTML = this.getProducts.map(getProductHTML).join("");
-    document.body.innerHTML = `
-        <h2>Offerte lampo</h2>
-        <ul>${productsHTML}</ul>
-    `;
+    this.renderHTML();
   },
 
   set page(newPage) {
-    /**
-     * Aggiorniamo la pagina corrente.  \\1
-     * Sarà che dobbiamo aggiornare il DOM anche qui?
-     * */
+    this._page = newPage;
+    // console.log(this._page);
+    this.renderHTML();
   },
 
   renderHTML() {
-    /**
-     * Aggiorniamo il DOM stampando i risultati a schermo.
-     * Avendo ora anche la paginazione, sarebbe il caso di mettere il nostro shop dentro un div specifico div.shop
-     * con una struttura del genere
-     * <body>
-     *  div.shop -> aggiornato ad ogni chiamata della funzione
-     *  div.pagination -> questo non si tocca mai
-     * </body
-     * e gestire la paginazione in modo separato, inserendo gli event listener una sola volta
-     * **/
+    const productsEl = document.querySelector(".products");
+
+    const productsHTML = this.products.map(getProductHTML).join("");
+    productsEl.innerHTML = `
+         <ul>${productsHTML}</ul>
+     `;
   },
 };
 
-shop.paperino = [
+// let button = document.querySelector("button");
+
+// button.forEach((button) => {
+//   button.addEventListener("click", () => {
+//     shop.page = button.getAttribute("id");
+//     shop.renderHTML();
+//   });
+// });
+
+let button = document.querySelectorAll("button");
+
+button.forEach((button) => {
+  button.addEventListener("click", () => {
+    shop.page = button.getAttribute("id");
+    // shop.renderHTML();
+  });
+});
+
+shop.products = [
   {
     name: "primo",
     price: 100,

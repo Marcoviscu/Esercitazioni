@@ -1,6 +1,5 @@
 .body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -13,18 +12,28 @@ ul {
 
 li {
   border: 2px red solid;
+
+  border-radius: 4%;
   list-style-type: none;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+button {
+  background-color: rgb(101, 115, 149);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.186);
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.35s;
 }
 
-.first-button,
-.second-button,
-.third-button {
-  border-radius: 100%;
-  background-color: darkgreen;
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.458);
 }
