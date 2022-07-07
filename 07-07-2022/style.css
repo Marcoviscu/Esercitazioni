@@ -7,6 +7,7 @@ body {
   align-items: center;
   background-color: rgba(142, 142, 145, 0.747);
   font-family: "Edu QLD Beginner", cursive;
+  font-size: x-large;
 }
 
 h2 {
@@ -37,6 +38,7 @@ h2 {
   border: 0px;
   padding: 5px;
   background-color: rgba(114, 112, 112, 0.336);
+  font-family: "Edu QLD Beginner", cursive;
 }
 
 .button {
@@ -44,7 +46,8 @@ h2 {
   border-top-right-radius: 5%;
   border: 0px;
   padding: 5px;
-  background-color: rgba(32, 104, 117, 0.781);
+  background-color: rgba(170, 1, 1, 0.877);
+  font-family: "Edu QLD Beginner", cursive;
 }
 
 .input-text:focus::placeholder {
@@ -70,4 +73,8 @@ li {
 
 .tasks-list input[type="checkbox"]:checked {
   margin-right: 1rem;
+}
+
+.tasks-list li input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
 }

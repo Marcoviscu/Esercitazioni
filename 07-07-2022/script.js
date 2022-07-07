@@ -42,6 +42,7 @@ const taskList = {
 
   set products(products) {
     this._taskList.push(products);
+    this.renderHTML();
   },
 
   renderHTML() {
