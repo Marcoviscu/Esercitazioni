@@ -80,6 +80,24 @@ const shop = {
   },
 };
 
+// const $pagination = document.querySelector(".pagination");
+
+// const $buttons = document.querySelector(".buttons");
+
+// $pagination.addEventListener("click", function (event) {
+//   console.log("click su pagination");
+
+//   if (e.target.tagName === "BUTTON") {
+//     e.preventDefault();
+
+//     console.log("stai cliccando su button");
+//     const buttonEl = e.target;
+//     const newPage = Number(buttonEl.innnerText) - 1;
+
+//     shop.setPage(newPage);
+//   }
+// });
+
 // let button = document.querySelector("button");
 
 // button.forEach((button) => {
@@ -117,10 +135,10 @@ shop.products = [
   {
     name: "Xiaomi Mi11",
     price: 499,
-    img: "https://i01.appmifile.com/webfile/globalimg/products/pc/mi11/specs-01.png",
+    img: "https://miopc.it/222421-large_default/xiaomi-mi-11-lite-5g-166-cm-655-dual-sim-ibrida-android-11-usb-tipo-c-8-gb-128-gb-4250-mah-verde.jpg",
   },
   {
-    name: "Philipps Tv",
+    name: "Philips Tv",
     price: 600,
     img: "https://images.philips.com/is/image/PhilipsConsumer/43PUS8556_12-IMS-it_IT?$jpglarge$&wid=960",
   },
