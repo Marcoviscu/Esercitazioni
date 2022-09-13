@@ -1,12 +1,26 @@
-import styles from'./App.module.scss';
-import Navbar from './components/Navbar';
+import React from 'react';
+import './App.module.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home, Category, ErrorPage } from './pages';
+import Navbar  from './components/Navbar/Navbar.jsx';
 
+export default function App() {
 
-function App() {
   return (
-    <div className={styles.App}>
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogo" element={<Home />} />
+          <Route path="/catalogo/:categoryName" element={<Category />} />
+          <Route
+            path="/catalogo/:categoryName/new"
+            element={<ErrorPage status={500} />}
+          />
+          <Route path="*" element={<ErrorPage name="prova" status={404} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
-export default App;

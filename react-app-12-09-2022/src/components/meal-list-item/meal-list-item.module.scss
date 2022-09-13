@@ -1,0 +1,38 @@
+.MealListItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: lightseagreen;
+  border-radius: 2%;
+  box-sizing: border-box;
+  
+
+  .thumbnail {
+    width: 100%;
+
+    &-wrapper {
+      flex: 0 0 3rem;
+    }
+  }
+
+
+  .title {
+    line-height: 1;
+    margin: 0 0 0.5rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+}

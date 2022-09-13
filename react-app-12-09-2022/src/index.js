@@ -1,23 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Gallery from './pages/Gallery/Gallery.jsx';
-import Navbar from "./components/Navbar";
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
 
+import './utils/api/endpoints.js';
 
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <Navbar />
-      <Routes>
-        <Route path="/" element={<App />}/>
-        <Route path="gallery" element={<Gallery />}/>
-        <Route path='*' element='pagina non trovata'/>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+  <StrictMode>
+    <App />
+  </StrictMode>
 );

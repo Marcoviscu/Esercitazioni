@@ -1,12 +1,13 @@
 import styles from './index.module.scss';
 import { Link } from 'react-router-dom';
+import { BiFoodMenu } from 'react-icons/bi';
+
 
 const Navbar = () => {
     return (
         <div className={styles.Navbar}>
-            <h1>Ciao</h1>
-            <Link to='/'>Home</Link>
-            <Link to='gallery'>Gallery</Link>
+            <BiFoodMenu className={styles.BiFoodMenu}/>
+            <Link className={styles.Home}to='/'><h1>Home</h1></Link>
         </div>
     )
 }
