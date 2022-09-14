@@ -6,15 +6,15 @@
   gap: 1rem;
   background-color: lightseagreen;
   border-radius: 2%;
-  box-sizing: border-box;
-  
+  width:10rem;
+  transition: 0.25s;
 
+
+ 
   .thumbnail {
+    border-radius: 2%;
     width: 100%;
 
-    &-wrapper {
-      flex: 0 0 3rem;
-    }
   }
 
 
@@ -35,4 +35,10 @@
     bottom: 0;
     opacity: 0;
   }
+}
+
+ .MealListItem:hover {
+  transform:scale(1.05);
+  border: 2xp solid rgb(89, 89, 89);
+  
 }

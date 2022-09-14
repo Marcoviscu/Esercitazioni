@@ -1,8 +1,10 @@
 .Home {
   background-color: #eee3cb;
- box-sizing: border-box;
- width: 100vw;
-  color:rgb(89, 89, 89);
+  box-sizing: border-box;
+  color: rgb(89, 89, 89);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   h1 {
     display: flex;

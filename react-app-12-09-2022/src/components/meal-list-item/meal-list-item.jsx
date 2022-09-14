@@ -17,10 +17,11 @@ export const MealListItem = (props) => {
         <div className={styles.content}>
           <h3 className={styles.title}>{meal.strMeal}</h3>
         </div>
-        <Link to={`/catalogo/${categoryName}/${meal.strMeal}`}
-              title={`naviga sul catalogo ${meal.strMeal}`}
-              className={styles.link}
-        >
+        <Link
+        to={`/catalogo/${categoryName}/${meal.strMeal}/${meal.idMeal}`}
+        title={`naviga sul catalogo ${meal.strMeal}`}
+        className={styles.link}
+      >
           {meal.strMeal}
         </Link>
       </li>

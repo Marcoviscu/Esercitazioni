@@ -1,12 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300&display=swap');
+
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+    
+    // width: 100vw;
+    // height: 100vw;
+}
+
 body, html {
     box-sizing: border-box;
     margin: 0;
     padding:0;
     height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
+    font-family:sans-serif;
     
     .App {
+        width: 100vw;
         color:rgb(89, 89, 89);
     }
 }

@@ -1,16 +1,18 @@
-
 .MealList {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  box-sizing: border-box;
+  padding-top: 10px;
+
+  .Ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    padding-inline-start: 0px;
     box-sizing: border-box;
-    .Ul {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 1rem;
-        grid-row-gap: 1rem;
-        height: 100vw;
-        
-    }
+    transition: 0.35;
+  }
 }
