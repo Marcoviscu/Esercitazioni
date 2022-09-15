@@ -3,23 +3,25 @@ import { useOutletContext } from 'react-router-dom';
 import styles from './index.module.scss';
 
 
-export function Ingredients() {
-    const { ingredients } = useOutletContext() ?? [];
+const Ingredients = () => {
+    const recipe = useOutletContext();
+    const { ingredients } = recipe;
+
 
     return   (
+        // <div><button onClick={() => console.log(recipe)}></button></div>
     <div className={styles.container}>
         <ul className={styles.Ul}>
-             {ingredients?.map((el, i) => (
+             {ingredients?.map((ingredients, i) => (
                  <li key={i}>
-                    {el.name} - {el.value}
+                    {ingredients.name} - {ingredients.value}
                 </li>
              ))}    
         </ul>
     </div>
-
     )
     
 
 }
 
-export default Ingredients
+export default Ingredients;

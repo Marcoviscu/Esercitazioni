@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Outlet, Link } from 'react-router-dom';
+import { useParams, Outlet, Link, NavLink } from 'react-router-dom';
 import { ENDPOINTS } from '../../utils/api/endpoints';
 import { useFetch } from '../../utils/api/use-fetch';
 import styles from './index.module.scss';
@@ -35,10 +35,14 @@ const formatRecipe = (data) => {
 export const Recipe = (props) => {
   const { tab } = props;
   const { categoryName, recipeName, id } = useParams();
-  const { data, loading, error } = useFetch(
-    `${ENDPOINTS.DETEAIL}?i=${id}`,
-    formatRecipe
-  );
+  const { data, loading, error } = useFetch(`${ENDPOINTS.DETEAIL}?i=${id}`);
+  const recipe = data?.meals?.at(0) ?? null;
+
+  const tabs = [
+    {label:'Ricetta', path: 'istruzioni' },
+    {label:'Ingredienti', path: 'ingredienti' },
+    {label:'YouTube', path: 'youtube' }
+  ];
 
   if (!data) {
     return 'loading...';
@@ -51,12 +55,17 @@ export const Recipe = (props) => {
       </Link>
 
       <ul className={styles.MainContent}>
-        <Link to='instructions'>Instructions</Link>
-        <Link to='ingredients'>Ingredienti</Link>
-        <Link to='youtube'>YouTube</Link>
+        {tabs.map(({label, path}) => (
+        <li key={path}>
+
+          <NavLink to={path}>
+            {label}
+          </NavLink>
+        </li>
+        ))}
       </ul>
 
-      <Outlet context={data} />
+      <Outlet context={formatRecipe(data)} />
 
       
     </div>

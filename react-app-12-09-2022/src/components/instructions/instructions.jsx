@@ -1,21 +1,18 @@
-import React from 'react';
-import { useOutletContext } from 'react-router-dom';
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
+import { useOutletContext } from "react-router-dom";
 
+const Instructions = () => {
+  const recipe = useOutletContext() ?? [];
 
-export function Instructions() {
-   const { instruction, thumbnailSrc }  = useOutletContext() ?? [];
-
-    return   (
-        <div className={styles.container}>
-            <img className={styles.img} src={thumbnailSrc} alt='image' />
-            <p className={styles.content}>{instruction}</p>
+  return (
+    <div className={styles.Instruction}>
+      <h2>Instruction</h2>
+        <div className={styles.overlay} />
+            <img className={styles.thumbnailSrc} src={recipe.thumbnailSrc} alt={recipe.image} />
+            <div className={styles.maincontent}>
+            <p className={styles.text}>{recipe.instructions}</p>
         </div>
-       
-
-    )
-    
-
+    </div>
+  );
 }
-
 export default Instructions;
