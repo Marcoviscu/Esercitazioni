@@ -41,9 +41,9 @@ const router = createBrowserRouter([
             path: ":recipeName/:id",
             element: <Recipe />,
             children: [
-              { path: "", element: <div>Pagina principale</div> },
-              { path: "ingredienti", element: <Ingredients /> },
+              { path: "",  element: <Ingredients /> },
               { path: "istruzioni", element: <Instructions /> },
+              { path: "ingredienti", element: <Ingredients /> },
               { path: "youtube", element: <YouTubePlayer /> },
             ],
           },

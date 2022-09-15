@@ -1,5 +1,18 @@
-.container {
-    display: flex;
-    justify-content: center;
-    height: 100vw;
+.Container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  padding: 3rem;
+  border: 2px solid lightseagreen;
+  border-radius: 2%;
+  background-color: grey;
+  color: whitesmoke;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.634);
+  font-family: "Open Sans", sans-serif;
+
+  .Ul {
+    padding-top: 1rem;
+    list-style-type: "- ";
+  }
 }

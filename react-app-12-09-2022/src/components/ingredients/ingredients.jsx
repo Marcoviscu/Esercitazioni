@@ -10,7 +10,8 @@ const Ingredients = () => {
 
     return   (
         // <div><button onClick={() => console.log(recipe)}></button></div>
-    <div className={styles.container}>
+    <div className={styles.Container}>
+        <h1>Ingredienti</h1>
         <ul className={styles.Ul}>
              {ingredients?.map((ingredients, i) => (
                  <li key={i}>

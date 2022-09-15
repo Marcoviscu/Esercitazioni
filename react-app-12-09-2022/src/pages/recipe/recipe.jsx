@@ -39,8 +39,8 @@ export const Recipe = (props) => {
   const recipe = data?.meals?.at(0) ?? null;
 
   const tabs = [
-    {label:'Ricetta', path: 'istruzioni' },
     {label:'Ingredienti', path: 'ingredienti' },
+    {label:'Ricetta', path: 'istruzioni' },
     {label:'YouTube', path: 'youtube' }
   ];
 
